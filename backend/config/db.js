@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//The MONGO_URI property is fetched from the .env file
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI);

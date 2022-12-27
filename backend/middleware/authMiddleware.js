@@ -1,3 +1,4 @@
+//auth middleware, will check for bearer token on every request, and if found, it will assign the current user to the request itself (which can be read later)
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 const User = require("../model/userModel");
@@ -16,7 +17,7 @@ const protect = asyncHandler(async (req, res, next) => {
       //verify token
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      //get user from the token
+      //get user from the token. "-password" will omit fetching the password
       req.user = await User.findById(decoded.id).select("-password");
       next();
     } catch (error) {
