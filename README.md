@@ -22,9 +22,18 @@ The app exposes a REST API for user management:
 The app exposes a REST API for goal management per user:
 
 - "/api/goals/" will get the goals for the current user if the HTTP method is GET, otherwise will add a new goal for the current user if the HTTP method is POST
-- "/api/goals/:id" will update the goal with this id for the current usre if the HTTP method is a PUT, or will remove it if the method is DELETE
+- "/api/goals/:id" will update the goal with this id for the current user if the HTTP method is a PUT, or will remove it if the method is DELETE
 
 The user /me endpoint as well as all goal endpoints are protected, i.e. they will require a bearer token in the request object for authorization 
+
+## Frontend
+
+The UI contains three major pages:
+- **Dashboard** - where the current user can see their goals, create a new goal or delete an existing one
+- **Login** - where user will provide the email and password and in case of success, will be redirected to the dashboard, otherwise an error message will be shown that such user doesn't exist
+- **Register** - where user will create a new account by providing the name, email, password and password confirmation. In case of success they will be redirected to the dashboard otherwise an error message will be shown
+
+There will be also a header present with buttons for "login", "logout" or "register"
 
 # Additional tools
 

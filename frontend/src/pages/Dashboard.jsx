@@ -1,3 +1,4 @@
+//JSX stands for JavaScript XML. It is a syntax extension for JavaScript that lets you use HTML tags right inside your JavaScript file
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
