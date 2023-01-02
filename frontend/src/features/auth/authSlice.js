@@ -47,6 +47,7 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout();
 });
 
+//Creating a slice requires 1) a string name to identify the slice, 2) an initial state value and 3) one or more reducer functions to define how the state can be mutated
 export const authSlice = createSlice({
   name: "auth",
   initialState,
